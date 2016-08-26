@@ -1,0 +1,178 @@
+.newPage .header .right{
+    width:auto;
+}
+.newPage .header .right button{
+	background:gray;
+	color:white;
+	outline: none;
+	height:30px;
+	font-size:14px;
+  width:80px;
+  margin-right:10px;
+}
+.newPage .left-div{
+  width:30%;
+  border:1px solid;
+  float:left;
+}
+.newPage .left-div .title{
+  height:50px;
+  background:gray;
+  color:#fff;
+  font-size:14px;
+  padding:10px 5px 0;
+}
+.newPage .left-div .title span{
+  width:33.3%;
+  display:inline-block;
+  text-align:center;
+  color:#fff;
+  padding-top:10px;
+  height:40px;
+  border-top-right-radius: 10px;
+  border-top-left-radius:10px;
+}
+.newPage .left-div .title span.active{
+  background:#fff;
+  color:#000;
+}
+.newPage .left-div div.create{
+  min-height: 400px;
+}
+.newPage .left-div div.create .type span{
+  width:33.3%;
+  margin-top:5px;
+  display:inline-block;
+  text-align:center;
+}
+.newPage .left-div li{
+  padding:5px;
+  float:left;
+}
+.newPage .left-div li img{
+  width:100px;
+  height:100px;
+}
+.newPage .left-div li div{
+  width:100px;
+  text-align:center;
+  padding-top:5px;
+}
+.newPage .left-div .search{
+  margin:10px 10px;
+  background:#F5F5F5;
+  height:30px;
+  padding-top:5px;
+  padding-left:10px;
+}
+.newPage input{
+  outline:none;
+  border:none;
+  background:#F5F5F5;
+  margin-left:5px;
+}
+.newPage .right-div{
+   width:70%;
+   float:right;
+   background:#F2F2F2;
+   padding:0 20px 20px;
+   overflow-x:scroll;
+}
+.newPage .right-div .btn-group{
+  float:right;
+  margin-right:20px;
+  height:50px;
+  padding-top:15px;
+}
+.newPage .right-div .btn-group span{
+  margin-left:10px;
+  color:#BABABA;
+  cursor:pointer;
+}
+.newPage .right-div .btn-group span.active{
+  color:#000;
+}
+.newPage .right-div .wrap{
+  margin-top:50px;
+  min-height: 400px;
+  background:#fff;
+  text-align:center;
+}
+
+.newPage .prop-mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222222;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.8;
+}
+.newPage .prop{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  text-align: center;
+  background: #ffffff;
+  width: 600px;
+  font-size: 14px;
+  z-index:5;
+}
+.newPage .prop .title{
+  padding:5px;
+  font-size:18px;
+  background:#A5A2A2;
+}
+.newPage .prop .title i{
+  float:right;
+  margin-right:20px;
+}
+.newPage .form-horizontal{
+  margin: 10px;
+}
+.newPage .form-horizontal .control-group{
+  height: 40px;
+  overflow: hidden;
+  margin: 5px;
+}
+.newPage .form-horizontal .control-label{
+  padding-top:0px;
+  display: inline-block;
+  width: 30%;
+  float: left;
+  vertical-align: top;
+  padding: 7px;
+}
+.newPage .form-horizontal select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    padding-right: 14px;
+    width:150px;
+}
+.newPage .form-horizontal button{
+  width:60px;
+  margin-right:10px;
+}
+.newPage .form-horizontal button:hover{
+  background-color:#000;
+  color:#fff;
+}
+.quit .prop .title{
+  height:30px;
+}
+.quit .prop .info{
+  margin-top:15px;
+  margin-bottom:15px;
+}
+.quit .prop button{
+  margin-right:30px;
+  height:30px;
+  width:50px;
+  border-radius:5px;
+}
+
+
+

@@ -1,0 +1,298 @@
+.moduleList .header .split{
+  width:2px;
+  border:1px solid;
+  margin:0 10px 0 5px;
+}
+.moduleList .header .menu{
+  cursor:pointer;
+}
+.moduleList .header ul{
+  display:none;
+  position: absolute;
+    background: #2f2d2d;
+    top: 65px;
+    right: -20px;
+    font-size: 14px;
+    width:150px;
+}
+.moduleList .header li{
+  height: 50px;
+  padding: 15px;
+  cursor:pointer;
+}
+.moduleList .header li i{
+  margin-right:10px;
+}
+.moduleList .condition{
+  margin-top:20px;
+}
+.moduleList .title{
+  height: 30px;
+  float: left;
+  font-size: 16px;
+  padding: 7px;
+}
+.moduleList .type{
+    height: 25px;
+    outline: none;
+    border: none;
+    width: 100px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    background-color: #DADADA;
+    padding-right: 14px;
+}
+.moduleList .setting-icon{
+  margin-left:10px;
+  background:gray;
+  line-height: 24px;
+  padding:4px;
+  border-radius:5px;
+}
+.moduleList .switchTab{
+  height:30px;
+}
+.moduleList .switchTab div{
+   width:400px;
+   margin:0 auto;
+   padding:0 100px;
+}
+.moduleList button.tab1{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.moduleList button.tab2{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.moduleList button{
+  width:100px;
+  height:30px;
+  background-color: #DADADA;
+  border:0;
+  font-size:16px;
+  outline:none;
+}
+.moduleList .switchTab button.active{
+  background-color: #7E7878;
+  color:#fff;
+}
+.moduleList .right{
+  width:200px;
+  height:30px;
+  float:right;
+}
+.moduleList .right button{
+  background:#2F2D2D;
+  color:#fff;
+  border-radius:5px;
+}
+
+.moduleList .wrap{
+  overflow: hidden;
+    background: #DADADA;
+    margin-top: 20px;
+    padding-left:40px;
+}
+
+.moduleList .wrap .toptitle{
+  padding-top:10px;
+}
+
+.moduleList .wrap .right{
+  width:auto;
+  height:auto;
+  float:right;
+  margin-right:10px;
+}
+
+.moduleList .wrap .line{
+  border: 1px solid;
+    width: 1px;
+    height: 19px;
+    color: gray;
+}
+
+.moduleList .container{
+  width:200px;
+  height:270px;
+  margin:10px 20px 10px 10px;
+  border:1px solid;
+  float:left;
+  position:relative;
+  overflow:hidden;
+  padding:0px;
+}
+.moduleList .container .unrelease{
+  position:absolute;
+  top: 43px;
+  left: -28px;
+  height:100x;
+  width:100px;
+  font-size:14px;
+  line-height:30px;
+  text-align:center;
+  transform-origin:left top;
+  transform:rotate(-45deg);
+  background:red;
+  z-index:2;
+}
+.moduleList .container .release{
+  background:green;
+  z-index:2;
+}
+.moduleList .container .top{
+  width:100%;
+  height:200px;
+  background:gray;
+}
+.moduleList .container .content{
+   font-size:14px;
+   padding:10px 10px 10px;
+}
+.moduleList .container .content div{
+  margin-top:10px;
+  font-size:14px;
+  line-height: 20px;
+}
+.moduleList .container .content img{
+  height:14px;
+}
+.moduleList .container .mask{
+  display:none;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-color: #43433F;
+  padding-left: 20px;
+
+}
+.moduleList .content{
+  padding-top: 10px;
+    clear: both;
+}
+.moduleList .content i{
+  padding: 3px;
+}
+.moduleList .container .del{
+  float:right;
+}
+.moduleList .container .del i{
+  margin-right:5px;
+  border: 1px solid;
+}
+.moduleList .container .del a{
+  color:#000;
+}
+
+.moduleList .container:hover .mask{
+  display: block;
+}
+.moduleList .container .mask .display{
+    margin: auto;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 80px;
+    color:#fff;
+    display: inline-block;
+
+}
+.moduleList .container .mask .display img{
+    width:30px;
+}
+.moduleList .container .mask .display div{
+  margin-top:0;
+  height:30px;
+  font-size:10px;
+}
+.moduleList .container .mask .display .icon{
+     margin: 0 10px 10px; 
+     background: gray; 
+     border-radius: 50%; 
+
+}
+
+.moduleList .prop-mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222222;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.8;
+}
+.moduleList .prop{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  text-align: center;
+  background: #ffffff;
+  width: 400px;
+  font-size: 14px;
+  z-index:6;
+}
+.moduleList .prop .title{
+  padding:5px;
+  font-size:18px;
+  background:#A5A2A2;
+  width: 100%;
+}
+.moduleList .prop .title i{
+  float:right;
+  margin-right:20px;
+}
+.moduleList .form-horizontal{
+  margin: 10px;
+}
+.moduleList .form-horizontal .control-group{
+  height: 40px;
+  overflow: hidden;
+  margin: 5px;
+}
+.moduleList .form-horizontal .control-label{
+  padding-top:0px;
+  display: inline-block;
+  width: 30%;
+  float: left;
+  vertical-align: top;
+  padding: 7px;
+}
+.moduleList .form-horizontal select{
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    padding-right: 14px;
+    width:150px;
+}
+.moduleList .form-horizontal button{
+  width:60px;
+  margin-right:10px;
+}
+.moduleList .form-horizontal button:hover{
+  background-color:#000;
+  color:#fff;
+}
+.moduleList .upload-file{
+  position: relative;
+    height: 24px;
+    width: 150px;
+    overflow: hidden;
+    display: inline-block;
+    background: gray;
+    cursor:pointer;
+}
+.moduleList .upload-file input{
+  position: absolute;
+  cursor:pointer;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}

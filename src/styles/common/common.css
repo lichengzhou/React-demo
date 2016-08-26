@@ -1,0 +1,71 @@
+//common
+html{color:#000;background:#FFF;} 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form, 
+fieldset,input,textarea,p,blockquote,th,td { 
+margin:0; 
+padding:0; 
+} 
+table { 
+border-collapse:collapse; 
+border-spacing:0; 
+} 
+fieldset,img { 
+border:0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+font-style:normal; 
+font-weight:normal; 
+} 
+ol,ul { 
+list-style:none; 
+} 
+caption,th { 
+text-align:left; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+font-size:100%; 
+font-weight:normal; 
+} 
+q:before,q:after { 
+content:''; 
+} 
+abbr,acronym { border:0; 
+} 
+
+
+.header{
+  width:100%;
+  height:100px;
+  background:#2F2D2D;
+  color:#fff;
+  font-size:24px;
+  text-align:center;
+}
+.header .center{
+  height:30px;
+  padding-top:35px;
+}
+.header .left{
+  float:left;
+  height: 30px;
+  margin-left: 20px;
+}
+.header .left select{
+    outline: none;
+    border: none;
+    width: 160px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    background-color: #2F2D2D;
+    padding-right: 14px;
+}
+.header .right{
+  float:right;
+  height: 30px;
+  margin-right: 20px;
+  position:relative;
+}
+
+
