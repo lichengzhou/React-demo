@@ -35,6 +35,21 @@ class NewPageLeft extends React.Component{
 		this.type = type;
 		this.setState({type:type});
 	}
+	chooseLayout(event){
+		let confirm = window.confirm("Are you sure to do this operation which will remove the existed data?");
+		if(!confirm){
+			return ;
+		}
+		let target = event.target;
+		if(target.nodeName != "LI"){
+			target = target.parentElement;
+			target.nodeName == "LI" ? target = target : target.parentElement;
+		}
+
+		let layoutId = target.getAttribute("data-id");
+		//保存数据，更新view
+		this.props.changeLayout(layoutId);
+	}
 	render(){
 		let layoutList;
 		let that = this;
@@ -57,7 +72,7 @@ class NewPageLeft extends React.Component{
          		<span><input name="type" type="radio" ref="type2" value="2" onChange={this.changeType.bind(this, '2')}/>响应式</span>
          	</div>
          	<ul>
-         		{layoutList.map(value => <li><img src={value.imgUrl} /> <div>{value.name}</div></li>)}
+         		{layoutList.map(value => <li data-id={value.id} onClick={this.chooseLayout.bind(this)}><img src={value.imgUrl} /> <div>{value.name}</div></li>)}
          	</ul>
          </div>
          <div className="create component" style={{display:'none'}}>
@@ -80,7 +95,7 @@ class NewPageLeft extends React.Component{
 	}
 }
 
-NewPageLeft.defaultProps = {layoutList:[{type:'0', name:'layout1', imgUrl:''},{type:'1', name:'layout2', imgUrl:''},
-	{type:'2', name:'layout3', imgUrl:''}], componentList:[{type:'0', name:'component1', imgUrl:''}], 
+NewPageLeft.defaultProps = {layoutList:[{type:'0', name:'layout12', imgUrl:'', id:"1"},{type:'1', name:'layout2', imgUrl:'', id:"2"},
+	{type:'2', name:'layout3', imgUrl:'', id:"3"}], componentList:[{type:'0', name:'component1', imgUrl:''}], 
 	moduleList:[{type:'0', name:'module1', imgUrl:''}]};
 export default NewPageLeft;

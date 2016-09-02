@@ -6,42 +6,27 @@ import React from 'react';
 import {withRouter } from 'react-router';
 
 class LayoutProp extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {initValue:this.props.initValue};
+	}
 
 	cancel(){
 		document.getElementsByClassName("newLayout")[0].style.display="none";
 		document.getElementsByClassName("newModule")[0].style.display="none";
 	}
 	save(){
-		let name, url, type;
+		let name, url, type, responsive;
 		if(this.props.flag < 1){
-			name = this.refs.layoutName;
-			url = this.refs.layoutUrl;
-			if(this.refs['layoutType-0'].checked ){
-				type = this.refs['layoutType-0'];
-			}
-			else if(this.refs['layoutType-1'].checked ){
-				type = this.refs['layoutType-1'];
-			}
-			else if(this.refs['layoutType-2'].checked ){
-				type = this.refs['layoutType-2'];
-			}
-			
+			let layoutResp = document.querySelector("#layout-resp");
+			let index = layoutResp.selectedIndex;
+			responsive = layoutResp.options[index].value;
 		}
 		else{
-			name = this.refs.moduleName;
-			url = this.refs.moduleUrl;
-			if(this.refs['moduleType-1'].checked ){
-				type = this.refs['moduleType-1'];
-			}
-			else if(this.refs['moduleType-2'].checked ){
-				type = this.refs['moduleType-2'];
-			}
-			else if(this.refs['moduleType-0'].checked ){
-				type = this.refs['moduleType-0'];
-			}
+			let layoutResp = document.querySelector("#comp-resp");
+			let index = layoutResp.selectedIndex;
+			responsive = layoutResp.options[index].value;
 		}
-
-		console.log(name.value + ":" + url.value + ":" + type.value)
 		name.value = "";
 		url.value="";
 		type.checked=false;
@@ -54,6 +39,11 @@ class LayoutProp extends React.Component{
 	    this.setState({
 	        children: nextProps.children
 	    });
+	}
+	changeHandler(key, event){
+		let tempData = this.props.initValue;
+		tempData[key] = event.target.value;
+		this.setState({initValue:tempData});
 	}
 	render(){
 		let layoutDisplay , moduleDisplay;
@@ -69,39 +59,41 @@ class LayoutProp extends React.Component{
 			layoutDisplay = {display:'none'};
 			moduleDisplay = {display:'none'};
 		}		
-
+		let data = this.props.initValue;
 		return (<div><div className="newLayout" style={layoutDisplay}>
 	      <div className="prop-mask">  
 	      </div>
 	      <div className="prop">
-	              <div className="title"><span>创建新布局</span><a href="javascript:void(0)" className="close" onClick={this.cancel.bind(this)}><i className="glyphicon glyphicon-remove"></i></a></div>
+	              <div className="title"><span>{data.titleInfo}</span><a href="javascript:void(0)" className="close" onClick={this.cancel.bind(this)}><i className="glyphicon glyphicon-remove"></i></a></div>
 	              <div className="content">
 	              <form className="form-horizontal">
 	                   <div className="control-group">
-	                      <label className="control-label">布局名称</label>
+	                      <label className="control-label">name</label>
 	                      <div className="controls">
-	                        <input type="text" id="name" ref="layoutName" placeholder="name"/>
+	                        <input type="text" id="name" value={data.name} onChange={this.changeHandler.bind(this, "name")} placeholder="name"/>
 	                      </div>
 	                    </div>
 	                    <div className="control-group">
 	                      <label className="control-label"></label>
 	                      <div className="controls upload-file">
-	                        <input type="file" ref="layoutUrl" placeholder=""/>＋上传缩略图
+	                        <input type="file" ref="layoutUrl" value={data.name} placeholder=""/>＋upload Image
 	                      </div>
 	                    </div>
 	                    <div className="control-group">
-	                      <label className="control-label">布局</label>
-	                      <div className="controls">
-	                        <input type="radio" name="type" ref="layoutType-0" value="0"/>手机
-	                        <input type="radio" name="type" ref="layoutType-1" value="1"/>网页
-	                        <input type="radio" name="type" ref="layoutType-2" value="2"/>响应式
-	                      </div>
+	                      <label className="control-label">Responsive Style</label>
+		                  <div className="responsive">
+		                      <select id="layout-resp" onChange={this.changeHandler.bind(this, "responsive")}>
+		                          <option value="0">phone</option>
+		                          <option value="1">pc</option>
+		                          <option value="2">responsive</option>
+		                      </select>
+		                    </div>
 	                    </div>
 	                    <div className="control-group">
 	                      <label className="control-label"></label>
 	                      <div className="controls">
-	                        <button className="cancel" type="button" onClick={this.cancel.bind(this)}>取消</button>
-	                        <button className="save" type="button" onClick={this.save.bind(this)}>创建</button>
+	                        <button className="cancel" type="button" onClick={this.cancel.bind(this)}>Cancel</button>
+	                        <button className="save" type="button" onClick={this.save.bind(this)}>save</button>
 	                      </div>
 	                    </div>
 	                  </form>
@@ -113,24 +105,32 @@ class LayoutProp extends React.Component{
 	      <div className="prop-mask">  
 	      </div>
 	      <div className="prop">
-	              <div className="title"><span>创建新组件</span><a href="javascript:void(0)" className="close" onClick={this.cancel.bind(this)}><i className="glyphicon glyphicon-remove"></i></a></div>
+	              <div className="title"><span>{data.titleInfo}</span><a href="javascript:void(0)" className="close" onClick={this.cancel.bind(this)}><i className="glyphicon glyphicon-remove"></i></a></div>
 	              <div className="content">
 	              <form className="form-horizontal">
 	                   <div className="control-group">
-	                      <label className="control-label">组件名称</label>
+	                      <label className="control-label">Name</label>
 	                      <div className="controls">
-	                        <input type="text" ref="moduleName" placeholder="name"/>
+	                        <input type="text" value={data.name} onChange={this.changeHandler.bind(this, "name")} placeholder="name"/>
 	                      </div>
 	                    </div>
 	                    <div className="control-group">
 	                      <label className="control-label"></label>
 	                      <div className="controls upload-file">
-	                        <input type="file" ref="moduleUrl" placeholder=""/>＋上传缩略图
+	                        <input type="file" value={data.imgUrl} placeholder=""/>Upload Image
 	                      </div>
 	                    </div>
 	                    <div className="control-group">
-	                      <label className="control-label">布局</label>
-	                      <div className="controls">
+	                    	<label className="control-label">Responsive Style</label>
+		                  	<div className="responsive">
+		                      <select id="comp-resp" value={data.responsive} onChange={this.changeHandler.bind(this, "responsive")} >
+		                          <option value="0">phone</option>
+		                          <option value="1">pc</option>
+		                          <option value="2">responsive</option>
+		                      </select>
+		                    </div>
+	                      <label className="control-label" style={{display:'none'}}>布局</label>
+	                      <div className="controls" style={{display:'none'}}>
 	                        <input type="radio" name="type" ref="moduleType-0" value="0"/>手机
 	                        <input type="radio" name="type" ref="moduleType-1" value="1"/>网页
 	                        <input type="radio" name="type" ref="moduleType-2" value="2"/>响应式
@@ -139,8 +139,8 @@ class LayoutProp extends React.Component{
 	                    <div className="control-group">
 	                      <label className="control-label"></label>
 	                      <div className="controls">
-	                        <button className="cancel" type="button" onClick={this.cancel.bind(this)}>取消</button>
-	                        <button className="save" type="button" onClick={this.save.bind(this)}>创建</button>
+	                        <button className="cancel" type="button" onClick={this.cancel.bind(this)}>Cancel</button>
+	                        <button className="save" type="button" onClick={this.save.bind(this)}>Save</button>
 	                      </div>
 	                    </div>
 	                  </form>
@@ -151,7 +151,7 @@ class LayoutProp extends React.Component{
 	}
 }
 
-LayoutProp.defaultProps = {};
+LayoutProp.defaultProps = {initValue:{titleInfo:"Create Layout"}};
 var DecorateLayoutProp = withRouter(LayoutProp);
 LayoutProp.propTypes = {
   router: React.PropTypes.shape({

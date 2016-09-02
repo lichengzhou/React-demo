@@ -27,10 +27,10 @@ class NewPageRight extends React.Component{
 			Array.from(spanList).map(function(item){item.className = item.className.replace("active", "");});
 			let temp = event.target.className;
 			event.target.className = temp + " active";
-			if(temp == "pad"){
+			if(temp.indexOf("pad") > -1){
 				document.querySelector(".right-div .wrap").style.width = "768px"
 			}
-			else if(temp == "phone"){
+			else if(temp.indexOf("phone") > -1){
 				document.querySelector(".right-div .wrap").style.width = "414px"
 			}
 			else{

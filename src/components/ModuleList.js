@@ -10,7 +10,6 @@ import React from 'react';
 import Header from './PageHeader';
 import ModuleTitle from './ModuleTitle';
 import ModuleItem from './ModuleItem';
-// import LayoutItem from './LayoutItem';
 
 class ModuleList extends React.Component{
 	render(){

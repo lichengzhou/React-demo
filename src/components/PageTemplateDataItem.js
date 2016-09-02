@@ -11,7 +11,15 @@ class ModuleDataItem extends React.Component{
         this.state = {status: props.item.status};
     }
     editPageInfo(item){
-        this.props.editPageInfo(item);
+        if(item == "2"){
+            document.querySelector(".page .template-edit").style.display = "block";
+            this.props.editPageInfo(item, "Edit Template Infomation");
+        }
+        else if(item == "1"){
+            document.querySelector(".page #create-page").style.display = "block";
+            this.props.editPageInfo(item, "Create Page By Template");
+        }
+        
     }
 	render(){
 		var releaseClass;
@@ -32,9 +40,9 @@ class ModuleDataItem extends React.Component{
                     <span>{this.props.item.name}</span>
                     <div>
                         <span className="del">
-							<a href="javascript:void(0)" title="根据模版创建页面"><i className="glyphicon glyphicon-copy"></i></a>
+							<a href="javascript:void(0)" title="根据模版创建页面" onClick={this.editPageInfo.bind(this, "1")}><i className="glyphicon glyphicon-copy"></i></a>
                             <Link to={`/createPage/${this.props.item.id}`}><i className="glyphicon glyphicon-edit"></i></Link>
-                            <a href="javascript:void(0)" title="页面设置" onClick={this.editPageInfo.bind(this)}><i className="glyphicon glyphicon-cog"></i></a>
+                            <a href="javascript:void(0)" title="页面设置" onClick={this.editPageInfo.bind(this, "2")}><i className="glyphicon glyphicon-cog"></i></a>
                             <a style={{display:'none'}} href="javascript:void(0)" title="页面下架"><i className="glyphicon glyphicon-trash"></i></a>
                         </span>
                     <div>

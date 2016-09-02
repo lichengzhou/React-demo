@@ -3,11 +3,17 @@
  * 单个布局展示组件，主要为了展示布局组件的样子以及一些关键信息
  */
 import React from 'react';
+import {Link} from 'react-router';
 
 class LayoutItem extends React.Component{
 	constructor(props){
         super(props);
         this.state = {status: this.props.item.status};
+    }
+    editInfo(){
+        document.querySelector(".moduleList .newLayout").style.display = "block";
+        document.querySelector(".moduleList .newModule").style.display = "none";
+        this.props.editInfo(this.props.item, "2");
     }
 	render(){
 		var releaseClass;
@@ -28,7 +34,7 @@ class LayoutItem extends React.Component{
                     <span>{this.props.item.name}</span>
                     <div>
                         <span className="del">
-                            <a href="javascript:void(0)" title="编辑"><i className="glyphicon glyphicon-edit"></i></a>
+                            <a href="javascript:void(0)" onClick={this.editInfo.bind(this)}><i className="glyphicon glyphicon-edit"></i></a>
                         </span>
                     <div>
                 </div>

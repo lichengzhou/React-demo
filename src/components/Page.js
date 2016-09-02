@@ -27,7 +27,6 @@ class PageContainer extends React.Component{
 			moduleStyle:{display:'none'}, pageDataList:this.props.pageList,
 			initValue:{titleInfo:'Create Page',name:"", title:"", linke:"",catagory:"0",responsive:"0"}
 		};
-		console.log("aa");
 		this.addPage = this.addPage.bind(this);
 		this.close = this.close.bind(this);
 		this.save = this.save.bind(this);
@@ -63,7 +62,6 @@ class PageContainer extends React.Component{
 		initValue.responsive = itemValue.responsive;
 		initValue.type = itemValue.type;
 		initValue.edit = true;
-		console.log(titleInfo);
 		this.setState({initValue: initValue});
 	}
 	close(){
@@ -157,7 +155,6 @@ class PageContainer extends React.Component{
 	page2Template(itemValue){
 		let initValue = itemValue;
 		initValue.titleInfo = "Edit Template Information";
-		console.log("bb");
 		this.setState({initValue:initValue});
 	}
 	getPageDataList(){

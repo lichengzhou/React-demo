@@ -39,7 +39,7 @@ class PageTemplateEdit extends React.Component{
 		return (<div style={{display:'none'}} className="template-edit">
       <div className="prop-mask" ></div>
       <div className="prop prop-new">
-            <div className="title"><span>{data.titleInfo}</span><a href="javascript:void(0)" className="close" onClick={this.props.close}><i className="glyphicon glyphicon-remove"></i></a></div>
+            <div className="title"><span>{data.titleInfo}</span><a href="javascript:void(0)" className="close" onClick={this.close.bind(this)}><i className="glyphicon glyphicon-remove"></i></a></div>
             <div className="content">
             <form className="form-horizontal">
                  <div className="control-group">
